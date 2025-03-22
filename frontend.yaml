@@ -1,5 +1,5 @@
 - name: configure Frontend server
-  hosts: localhost #frontend
+  hosts: frontend
   connection: local
   # vars_files:
   # - variables-frontend.yaml
