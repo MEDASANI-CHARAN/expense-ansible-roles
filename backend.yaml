@@ -1,0 +1,8 @@
+- name: configure Backend server
+  hosts: all #backend
+  connection: local
+  vars_files:
+  - variables-dev.yaml
+  become: yes
+  roles:
+  - backend
