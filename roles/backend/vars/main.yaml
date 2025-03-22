@@ -1,2 +1,4 @@
 login_user: root
 PASSWORD: ExpenseApp1
+login_host: db.daws78s.xyz
+HOST_NAME: db.daws78s.xyz
