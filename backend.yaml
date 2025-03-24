@@ -1,5 +1,8 @@
 - name: configure Backend server
-  hosts: backend
+  hosts: localhost #backend
+  connection: local
+  vars_file:
+  - variable-dev-file.yaml
   become: yes
   roles:
   - backend
