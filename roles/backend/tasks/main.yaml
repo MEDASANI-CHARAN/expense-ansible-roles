@@ -56,6 +56,17 @@
     src: backend.service
     dest: /etc/systemd/system/backend.service
 
+- name: daemon reload
+  ansible.builtin.systemd_service:
+    daemon_reload: true
+
+- name: start and enable backend service
+  tags:
+  - deployment
+  ansible.builtin.service:
+    name: backend
+    enabled: yes
+
 - name: install python mysql dependencies
   ansible.builtin.pip:
     name: 
@@ -72,14 +83,9 @@
     login_password: "{{PASSWORD}}"
     login_host: "{{login_host}}"
 
-- name: daemon reload 
-  ansible.builtin.systemd_service:
-    daemon_reload: true
-
 - name: start and enable backend service
   tags:
   - deployment
   ansible.builtin.service:
     name: backend
     state: restarted
-    enabled: yes
