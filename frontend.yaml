@@ -1,5 +1,5 @@
 - name: configure Frontend server
-  hosts: localhost #frontend
+  hosts: all #frontend
   connection: local
   become: yes
   roles:
